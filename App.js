@@ -9,8 +9,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       {/* <BlogsScreen/> */}
-      {/* <SingleBlog/> */}
-      <BlogsDetail/>
+      <SingleBlog/>
+      {/* <BlogsDetail/> */}
     </View>
   )
 }
