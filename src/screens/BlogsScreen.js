@@ -9,28 +9,28 @@ const BlogsScreen = () => {
         {
             image: require('../../assets/flower1.jpg'),
             text: "Does Dry in January Actually Improve Your Health?",
-            image: require('../../assets/DP2.jpg'),
+            dp: require('../../assets/DP.jpg'),
             name: "Subash Chandra",
             time: ".4 min read"
         },
         {
             image: require('../../assets/flower2.png'),
             text: "How to Seem Like You Always Have Your Shot Together",
-            image: require('../../assets/DP2.jpg'),
+            dp: require('../../assets/DP.jpg'),
             name: "Jonhy Vino",
             time: ".4 min read"
         },
         {
             image: require('../../assets/flower3.png'),
             text: "Does Dry in January Actually Improve Your Health?",
-            image: require('../../assets/DP2.jpg'),
+            dp: require('../../assets/DP.jpg'),
             name: "Masudur Rah",
             time: ".4 min read"
         },
         {
             image: require('../../assets/flower4.png'),
             text: "You do hire a designer to make something.You hire them.",
-            image: require('../../assets/DP2.jpg'),
+            dp: require('../../assets/DP.jpg'),
             name: "Subash Chandra",
             time: ".4 min read"
         },
@@ -48,7 +48,7 @@ const BlogsScreen = () => {
             <FlatList
                 data={blogs}
                 renderItem={({ item }) => {
-                    return <SingleBlog name={item.name} time={item.time} text={item.text} image={item.image} />
+                    return <SingleBlog name={item.name} time={item.time} text={item.text} image={item.image} dp={item.dp} />
                 }}
                 keyExtractor={(item) => item.number}
             />
@@ -61,7 +61,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "space-around",
         marginTop: 30,
-        marginVertical:10
+        marginVertical:10,
+        // flexDirection:"row"
 
     },
     heading: {
