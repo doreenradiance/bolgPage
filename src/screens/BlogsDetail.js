@@ -19,7 +19,7 @@ export default function BlogsDetail() {
                 </View>
 
                 <View >
-                    <Image source={require('../../assets/flower1.jpg')} style={styles.firstImage}/>
+                    <Image source={require('../../assets/flower1.png')} style={styles.firstImage}/>
                 </View>
 
                <View style={styles.boldText}> 

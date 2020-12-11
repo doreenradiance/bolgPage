@@ -7,32 +7,32 @@ import { Octicons } from '@expo/vector-icons';
 const BlogsScreen = () => {
     blogs = [
         {
-            image: require('../../assets/flower1.jpg'),
-            text: "Does Dry in January Actually Improve Your Health?",
+            image: require('../../assets/flower.png'),
+            text: "Does Dry is January Actually Improve Your Health?",
             dp: require('../../assets/DP.jpg'),
-            name: "Subash Chandra",
-            time: ".4 min read"
+            name: "Subash Chand",
+            time: "4 min read"
         },
         {
-            image: require('../../assets/flower2.png'),
+            image: require('../../assets/flower1.png'),
             text: "How to Seem Like You Always Have Your Shot Together",
             dp: require('../../assets/DP.jpg'),
             name: "Jonhy Vino",
-            time: ".4 min read"
+            time: "4 min read"
         },
         {
-            image: require('../../assets/flower3.png'),
+            image: require('../../assets/flower2.png'),
             text: "Does Dry in January Actually Improve Your Health?",
             dp: require('../../assets/DP.jpg'),
             name: "Masudur Rah",
-            time: ".4 min read"
+            time: "4 min read"
         },
         {
-            image: require('../../assets/flower4.png'),
+            image: require('../../assets/flower3.png'),
             text: "You do hire a designer to make something.You hire them.",
             dp: require('../../assets/DP.jpg'),
-            name: "Subash Chandra",
-            time: ".4 min read"
+            name: "Subash Chand",
+            time: "4 min read"
         },
 
     ]
@@ -62,12 +62,10 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         marginTop: 30,
         marginVertical:10,
-        // flexDirection:"row"
-
     },
     heading: {
         flexDirection: "row",
-        marginLeft:10
+        marginLeft:10,
     },
     headingText:{
         fontSize:25,
@@ -76,7 +74,8 @@ const styles = StyleSheet.create({
         marginBottom:10
     },
     gridIcon:{
-        marginTop:5
+        marginTop:5,
+        marginLeft:5
     },
     search:{
         marginTop:5

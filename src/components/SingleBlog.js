@@ -9,13 +9,14 @@ export default function blogs({ name, time, text, image, dp }) {
             <View style={styles.container}>
 
                 <View style={styles.details}>
-                    <Image source={require('../../assets/flower4.png')} style={styles.image} />
+                    <Image source={image} style={styles.image} />
                     <View style={styles.infoContainer}>
-                        <Text style={styles.text}>texttexttexttextvuhrffgyggghhjyytggtextvvtexttexttexttexttexttexttexttextv</Text>
+                        <Text style={styles.text}>{text}</Text>
                         <View style={styles.profileDetails}>
-                            <Image source={require('../../assets/flower4.png')} style={styles.secondImage} />
-                            <Text style={styles.name}>name</Text>
-                            <Text style={styles.time}>time</Text>
+                            <Image source={dp} style={styles.secondImage} />
+                            <Text style={styles.name}>{name}</Text>
+                            <View style={styles.indicator}></View>
+                            <Text style={styles.time}>{time}</Text>
                         </View>
                     </View>
 
@@ -30,11 +31,13 @@ export default function blogs({ name, time, text, image, dp }) {
 const styles = StyleSheet.create({
     mainContainer: {
         marginHorizontal: 5,
+        justifyContent:"space-around"
     },
     container: {
         // flex:1,
+        backgroundColor:"#e1e8e3",
         height:150,
-        marginTop: 10,
+        marginTop: 15,
         flexDirection: "row",
     },
 
@@ -42,14 +45,23 @@ const styles = StyleSheet.create({
 flexDirection:"row",
     },
     profileDetails: {
-        flexDirection: "row"
+        flexDirection: "row",
+        marginTop:20
     },
     image: {
-        height: 100,
-        width: 100
+        marginTop:15,
+        height: 130,
+        width: 100,
+       
     },
+
+    infoContainer:{
+        // flex:1
+    },
+
     text: {
-        fontSize: 15,
+        // flex:1,
+        fontSize: 20,
         fontWeight: "bold",
         marginTop:10,
         marginLeft:10,
@@ -65,15 +77,23 @@ flexDirection:"row",
     name: {
         fontSize: 15,
         fontWeight: "bold",
-        marginLeft: 10,
-        marginTop: 15
+        marginLeft: 8,
+        marginTop: 12
     },
+    indicator:{
+    backgroundColor:"#444952",
+    height:5,
+    width:5,
+    borderRadius:2.5,
+    marginTop:23,
+    marginLeft:8
+},
+
     time: {
         color: "#444952",
-        marginTop: 3,
         fontSize: 15,
         fontWeight: "bold",
-        marginLeft: 10,
-        marginTop: 15
+        marginLeft: 3,
+        marginTop: 13,
     },
 })
