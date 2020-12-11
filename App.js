@@ -8,8 +8,8 @@ import  BlogsDetail from './src/screens/BlogsDetail';
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <BlogsScreen/> */}
-      <SingleBlog/>
+      <BlogsScreen/>
+      {/* <SingleBlog/> */}
       {/* <BlogsDetail/> */}
     </View>
   )
