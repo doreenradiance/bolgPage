@@ -1,16 +1,25 @@
 import React from 'react'
 import {ScrollView, StyleSheet, Text, View, Image, } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { AntDesign, Feather, Entypo, SimpleLineIcons } from '@expo/vector-icons';
 
 
 
-export default function BlogsDetail() {
+export default function BlogsDetail({ route, navigation }) {
+    let blog = route.params;
+
     return (
         <ScrollView style={styles.mainContainer}>
             <View style={styles.cotainer}>
                 <View style={styles.heading}>
-                    <AntDesign name="left" style={styles.left} size={30} />
+                <TouchableOpacity onPress={() =>{navigation.navigate("BlogsScreen") }}
+                 >
+                <AntDesign name="left" style={styles.left} size={30} />
+                    </TouchableOpacity>
+
                     <Text style={styles.headingText}>Beauty</Text>
+                   
+                    
                     <View style={styles.icons}>
                      <Feather name="headphones" style={styles.headPhone} size={25} />
                      <Entypo name="heart-outlined" style={styles.heart} size={25} />
@@ -19,26 +28,19 @@ export default function BlogsDetail() {
                 </View>
 
                 <View >
-                    <Image source={require('../../assets/flower1.png')} style={styles.firstImage}/>
+                    <Image source={blog.image} style={styles.firstImage}/>
                 </View>
 
-               <View style={styles.boldText}> 
                 <Text style={styles.text1}>
                     Focus On Learning and Creating
-                    </Text>
-                    <Text style={styles.text2}>
-                    Rather Than Entertainment and 
-                    </Text>
-                <Text style={styles.text3}>
+                    Rather Than Entertainment and
                     Distraction
-                    </Text>
-                </View>
-                 
-
+                </Text>
+            
                 <View style={styles.profile}>
-                    <Image source={require('../../assets/DP.jpg')} style={styles.secondImage} />
+                    <Image source={blog.dp} style={styles.secondImage} />
                     <View style={styles.profileText}>
-                    <Text> Jonhy Vino</Text>
+                    <Text style={styles.name}> Jonhy Vino</Text>
                     <View style={styles.indicator}></View>
                     <Text style={styles.time}>4 min read</Text>
                     </View>
@@ -58,7 +60,7 @@ export default function BlogsDetail() {
                 This book is a treatise on the theory of ethics,
                 very popular during the Renaissance.
     
-                   </Text>
+                </Text>
 
             </View>
         </ScrollView>
@@ -70,14 +72,12 @@ const styles = StyleSheet.create({
         flex: 1,
         marginTop:40,
         marginLeft:15,
-        // justifyContent: "space-around",
     },
 
     container: {
         flex: 1,
         marginTop: 30,
         marginHorizontal: 20,
-        // marginVertical:20,
         justifyContent: "space-around",
     },
 
@@ -121,13 +121,12 @@ share:{
     height:250,
     width:250,
     marginTop:25
-    // backgroundColor:'red'
  },
 
  secondImage:{
      height:30,
      width:30,
-     borderRadius:15,
+     borderRadius:20,
  },
 
     indicator:{
@@ -139,29 +138,23 @@ share:{
         width:5,
         borderRadius:2.5
  },
+ name:{
+     fontWeight:"700",
+     fontSize:16,
+     marginTop:1,
+     marginLeft:5
+ },
  time:{
      color:"#444952",
      marginTop:3
  },
 
- boldText:{
-     marginLeft:15,
-     marginTop:10
- },
-
  text1:{
+     flex:1,
      fontSize:19,
      fontWeight:"bold",
-},
-
-text2:{
-    fontSize:19,
-    fontWeight:"bold",
-},
-
-text3:{
-    fontSize:19,
-    fontWeight:"bold",
+     marginLeft:15,
+     marginTop:10
 },
 
  profile:{

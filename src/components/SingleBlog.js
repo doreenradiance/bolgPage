@@ -1,15 +1,26 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 
-export default function blogs({ name, time, text, image, dp }) {
+export default function blogs({ name, time, text, image, dp, navigation,}) {
+
+    // navigation.route.params;
+
     return (
-        <View style={styles.mainContainer}>
+        <TouchableOpacity
+        style={styles.skip} onPress={() => {
+            navigation.navigate('BlogsDetail',{name, time, text, image, dp,navigation})
+          }}
+         style={styles.mainContainer}>
 
             <View style={styles.container}>
 
                 <View style={styles.details}>
-                    <Image source={image} style={styles.image} />
+                    <View style={styles.imageContainer}>
+                        <Image source={image} style={styles.image} 
+                          />
+                    </View>
                     <View style={styles.infoContainer}>
                         <Text style={styles.text}>{text}</Text>
                         <View style={styles.profileDetails}>
@@ -24,76 +35,78 @@ export default function blogs({ name, time, text, image, dp }) {
 
             </View>
 
-        </View >
+        </TouchableOpacity >
     )
 }
 
 const styles = StyleSheet.create({
     mainContainer: {
         marginHorizontal: 5,
-        justifyContent:"space-around"
+        justifyContent: "space-around"
     },
     container: {
-        // flex:1,
-        backgroundColor:"#e1e8e3",
-        height:150,
+        backgroundColor: "#e1e8e3",
+        height: 150,
         marginTop: 15,
         flexDirection: "row",
     },
 
-    details:{
-flexDirection:"row",
+    details: {
+        flexDirection: "row",
+        flex: 1
     },
     profileDetails: {
         flexDirection: "row",
-        marginTop:20
+        marginTop: 20
+    },
+    imageContainer:{
+        backgroundColor:"#db9e72" ,
+        
     },
     image: {
-        marginTop:15,
-        height: 130,
+        marginTop: 15,
+        height: 120,
         width: 100,
-       
     },
 
-    infoContainer:{
-        // flex:1
+    infoContainer: {
+        flex: 1
     },
 
     text: {
-        // flex:1,
         fontSize: 20,
         fontWeight: "bold",
-        marginTop:10,
-        marginLeft:10,
-        
+        marginTop: 10,
+        marginLeft: 10,
+
     },
 
     secondImage: {
-        height: 40,
-        width: 40,
-        borderRadius: 20,
-        marginLeft:10
+        height: 35,
+        width: 35,
+        borderRadius: 15,
+        marginLeft: 10
     },
     name: {
         fontSize: 15,
         fontWeight: "bold",
         marginLeft: 8,
-        marginTop: 12
+        marginTop: 10
     },
-    indicator:{
-    backgroundColor:"#444952",
-    height:5,
-    width:5,
-    borderRadius:2.5,
-    marginTop:23,
-    marginLeft:8
-},
+    indicator: {
+        backgroundColor: "#444952",
+        height: 5,
+        width: 5,
+        borderRadius: 2.5,
+        marginTop: 20,
+        marginLeft: 8
+    },
 
     time: {
         color: "#444952",
         fontSize: 15,
         fontWeight: "bold",
         marginLeft: 3,
-        marginTop: 13,
+        marginTop: 10,
     },
 })
