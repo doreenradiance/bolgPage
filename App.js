@@ -1,23 +1,53 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import BlogsScreen from './src/screens/BlogsScreen';
-import SingleBlog  from './src/components/SingleBlog';
-import  BlogsDetail from './src/screens/BlogsDetail';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack'
 
+import BlogsDetail from './src/screens/BlogsDetail';
+import BlogsScreen from './src/screens/BlogsScreen'
+
+const Stack = createStackNavigator()
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <BlogsScreen/>
-      {/* <SingleBlog/> */}
-      {/* <BlogsDetail/> */}
-    </View>
-  )
-}
+    <NavigationContainer>
+      <Stack.Navigator
+      screenOptions={{
+        // title:"Blog Details",
+        headerTintColor: "#3b31eb",
+          headerTitleAlign: "center",
+      }}
+      >
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    
-  },
-});
+      <Stack.Screen 
+      options={{
+        header:() =>null
+      }}
+          name='BlogsScreen'
+           component={BlogsScreen} />
+
+        <Stack.Screen 
+        options={{
+          header:() =>null
+        }}
+        name='BlogsDetail' component={BlogsDetail} />
+        
+      </Stack.Navigator>
+    </NavigationContainer>
+
+  );
+}
+  //   <View style={styles.container}>
+  //     <BlogsScreen/>
+  //     {/* <SingleBlog/> */}
+  //     {/* <BlogsDetail/> */}
+  //   </View>
+  // )
+
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+
+//   },
+// });
