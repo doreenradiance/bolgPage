@@ -4,7 +4,7 @@ import SingleBlog from '../components/SingleBlog';
 import { Fontisto } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
 
-const BlogsScreen = () => {
+const BlogsScreen = ({navigation}) => {
     blogs = [
         {
             image: require('../../assets/flower.png'),
@@ -34,6 +34,13 @@ const BlogsScreen = () => {
             name: "Subash Chand",
             time: "4 min read"
         },
+        {
+            image: require('../../assets/flower1.png'),
+            text: "How to Seem Like You Always Have Your Shot Together",
+            dp: require('../../assets/DP.jpg'),
+            name: "Jonhy Vino",
+            time: "4 min read"
+        },
 
     ]
 
@@ -48,7 +55,13 @@ const BlogsScreen = () => {
             <FlatList
                 data={blogs}
                 renderItem={({ item }) => {
-                    return <SingleBlog name={item.name} time={item.time} text={item.text} image={item.image} dp={item.dp} />
+                    return <SingleBlog 
+                    name={item.name}
+                     time={item.time}
+                     text={item.text} 
+                    image={item.image}
+                     dp={item.dp}
+                     navigation={navigation} />
                 }}
                 keyExtractor={(item) => item.number}
             />
