@@ -10,7 +10,7 @@ export default function BlogsDetail({ route, navigation }) {
 
     return (
         <ScrollView style={styles.mainContainer}>
-            <View style={styles.cotainer}>
+            <View style={styles.container}>
                 <View style={styles.heading}>
                 <TouchableOpacity onPress={() =>{navigation.navigate("BlogsScreen") }}
                  >
